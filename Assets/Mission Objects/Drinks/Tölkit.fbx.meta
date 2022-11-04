@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: e1fa079d354efaf4495853441bdb98f7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Battery
+    100002: BatteryClip
+    100004: EdBottle
+    100006: EDcap
+    100008: Es
+    100010: EsClip
+    100012: JumpStart
+    100014: JumpstartClip
+    100016: KongStrong
+    100018: KongStrongCap
+    100020: Logo
+    100022: MegaForce
+    100024: MegaForceClip
+    100026: MegaForceSugarFree
+    100028: MegaForceSugarFreeClip
+    100030: Monster
+    100032: MonsterClip
+    100034: RedBull
+    100036: RedbullClip
+    100038: //RootNode
+    400000: Battery
+    400002: BatteryClip
+    400004: EdBottle
+    400006: EDcap
+    400008: Es
+    400010: EsClip
+    400012: JumpStart
+    400014: JumpstartClip
+    400016: KongStrong
+    400018: KongStrongCap
+    400020: Logo
+    400022: MegaForce
+    400024: MegaForceClip
+    400026: MegaForceSugarFree
+    400028: MegaForceSugarFreeClip
+    400030: Monster
+    400032: MonsterClip
+    400034: RedBull
+    400036: RedbullClip
+    400038: //RootNode
+    2100000: Es
+    2100002: Metal
+    2100004: MegaForce
+    2100006: Monster
+    2100008: ED
+    2100010: Cap
+    2100012: MegaForceSugarFree
+    2100014: Battery
+    2100016: RedBull
+    2100018: JumpStart
+    2100020: KongStrong
+    2300000: Battery
+    2300002: BatteryClip
+    2300004: EdBottle
+    2300006: EDcap
+    2300008: Es
+    2300010: EsClip
+    2300012: JumpStart
+    2300014: JumpstartClip
+    2300016: KongStrong
+    2300018: KongStrongCap
+    2300020: Logo
+    2300022: MegaForce
+    2300024: MegaForceClip
+    2300026: MegaForceSugarFree
+    2300028: MegaForceSugarFreeClip
+    2300030: Monster
+    2300032: MonsterClip
+    2300034: RedBull
+    2300036: RedbullClip
+    3300000: Battery
+    3300002: BatteryClip
+    3300004: EdBottle
+    3300006: EDcap
+    3300008: Es
+    3300010: EsClip
+    3300012: JumpStart
+    3300014: JumpstartClip
+    3300016: KongStrong
+    3300018: KongStrongCap
+    3300020: Logo
+    3300022: MegaForce
+    3300024: MegaForceClip
+    3300026: MegaForceSugarFree
+    3300028: MegaForceSugarFreeClip
+    3300030: Monster
+    3300032: MonsterClip
+    3300034: RedBull
+    3300036: RedbullClip
+    4300000: Es
+    4300002: EsClip
+    4300004: MegaForce
+    4300006: MegaForceClip
+    4300008: Monster
+    4300010: MonsterClip
+    4300012: EdBottle
+    4300014: EDcap
+    4300016: MegaForceSugarFree
+    4300018: MegaForceSugarFreeClip
+    4300020: Battery
+    4300022: BatteryClip
+    4300024: RedBull
+    4300026: RedbullClip
+    4300028: JumpStart
+    4300030: JumpstartClip
+    4300032: KongStrong
+    4300034: Logo
+    4300036: KongStrongCap
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
