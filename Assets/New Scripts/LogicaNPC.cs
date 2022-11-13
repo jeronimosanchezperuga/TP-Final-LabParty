@@ -96,13 +96,13 @@ public class LogicaNPC : MonoBehaviour
 
     IEnumerator HablarConNPC1()
     {
-        textoObjetivoNPC.text = "Michelle:  Que  laboratorios  tan  aburridos!";
+        textoObjetivoNPC.text = "Odd Chap:  Que  laboratorios  tan  aburridos!";
         yield return new WaitForSeconds(2.5f);
-        textoObjetivoNPC.text = "Michelle:  Si  tan  solo  se  hiciera  una  fiesta...";
+        textoObjetivoNPC.text = "Odd Chap:  Si  tan  solo  se  hiciera  una  fiesta...";
         yield return new WaitForSeconds(2.5f);
-        textoObjetivoNPC.text = "Michelle:  Crees  que  se  pueda?";
+        textoObjetivoNPC.text = "Odd Chap:  Crees  que  se  pueda?";
         yield return new WaitForSeconds(2.5f);
-        textoObjetivoNPC.text = "Michelle:  Genial, manos a  la  obra!";
+        textoObjetivoNPC.text = "Odd Chap:  Genial, manos a  la  obra!";
         yield return new WaitForSeconds(2.5f);
         panelNPCMision.SetActive(false);
         Player.GetComponent<FirstPersonController>().enabled = true;

@@ -49,7 +49,7 @@ public class LogicaObjetivos : MonoBehaviour
 
             if (cantidadObjetivos <= 0)
             {
-                textoMision.text = "Regresa  con  Michelle";
+                textoMision.text = "Regresa  con  Odd Chap";
                 check3 = true;
                 LogicaNPC.check3 = false;
                 CountDownTimer.currentTime = 40f;
