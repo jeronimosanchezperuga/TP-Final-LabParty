@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266cc79b7f23fe4469175aa8978347f6, type: 3}
+  m_Name: Hombre1
+  m_EditorClassIdentifier: 
+  dialogo1: 'Pedro:  Ey,  que  onda?'
+  dialogo2: 'Pedro:  Tan  al  pedo  estas?'
+  dialogo3: 'Pedro:  Dejame  solo  con  mis  jueguitos...'
+  dialogo4: 'Pedro:  Ahhh,  sali  de  aca!'
+  hasTalked: 0

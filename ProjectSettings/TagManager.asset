@@ -11,6 +11,8 @@ TagManager:
   - NPC
   - Objetivo
   - NPC2
+  - NPC3
+  - NPC4
   layers:
   - Default
   - TransparentFX

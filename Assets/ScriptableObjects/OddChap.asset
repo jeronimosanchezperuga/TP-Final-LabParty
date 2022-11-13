@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266cc79b7f23fe4469175aa8978347f6, type: 3}
+  m_Name: OddChap
+  m_EditorClassIdentifier: 
+  dialogo1: 'Odd Chap:  Que  laboratorios  tan  aburridos!'
+  dialogo2: 'Odd Chap:  Estaba  planeando  una  fiesta...'
+  dialogo3: 'Odd Chap:  Crees  que  me  puedas  ayudar?'
+  dialogo4: 'Odd Chap:  Genial,  pero  antes  que  eso...'
+  dialogo5: 'Odd Chap:  Por  que  no  hablas  con  el  resto?'
+  dialogo6: 'Odd Chap:  Seguro  quieren  concerte  mejor.'
+  hasTalked: 0
