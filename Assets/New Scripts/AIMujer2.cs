@@ -9,20 +9,19 @@ public class AIMujer2 : MonoBehaviour
     public Transform[] waypoints;
     int waypointIndex;
     Vector3 target;
-    private Animator Mujer2Animator;
-    private bool checkIdle = false;
 
     void Start()
     {
-        checkIdle = false;
-        agent = GetComponent<NavMeshAgent>();
-        UpdateDestination();
-        Mujer2Animator = GetComponent<Animator>();
+        if (LogicaNPC.checkMujer2 == false)
+        {
+            agent = GetComponent<NavMeshAgent>();
+            UpdateDestination();
+        }
     }
 
     void Update()
     {
-        if (checkIdle == false)
+        if (LogicaNPC.checkMujer2 == false)
         {
             if (Vector3.Distance(transform.position, target) < 1)
             {
@@ -31,33 +30,34 @@ public class AIMujer2 : MonoBehaviour
             }
         }
 
-        if (Mujer2Animator != null)
+        else
         {
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                Mujer2Animator.SetTrigger("Idle");
-                checkIdle = true;
-            }
-
-            if (Input.GetKeyDown(KeyCode.G))
-            {
-                checkIdle = false;
-            }
+            agent.velocity = Vector3.zero;
         }
     }
 
     void UpdateDestination()
     {
-        target = waypoints[waypointIndex].position;
-        agent.SetDestination(target);
+        if (LogicaNPC.checkMujer2 == false)
+        {
+            target = waypoints[waypointIndex].position;
+            agent.SetDestination(target);
+        }
+
+        else agent.velocity = Vector3.zero;
     }
 
     void IterateWaypointIndex()
     {
-        waypointIndex++;
-        if (waypointIndex == waypoints.Length)
+        if (LogicaNPC.checkMujer2 == false)
         {
-            waypointIndex = 0;
+            waypointIndex++;
+            if (waypointIndex == waypoints.Length)
+            {
+                waypointIndex = 0;
+            }
         }
+
+        else agent.velocity = Vector3.zero;
     }
 }

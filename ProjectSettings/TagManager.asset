@@ -10,6 +10,7 @@ TagManager:
   - Mesa
   - NPC
   - Objetivo
+  - NPC2
   layers:
   - Default
   - TransparentFX

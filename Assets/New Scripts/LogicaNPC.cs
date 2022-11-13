@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.AI;
 using TMPro;
 
 public class LogicaNPC : MonoBehaviour
 {
-    public GameObject panelNPCHablar, panelNPCMision, inticon, Player, MissionObjects, PanelGeneral, panelTimer;
+    public GameObject panelNPCHablar, panelNPCMision, inticon, Player, MissionObjects, PanelGeneral, panelTimer, NPCMujer2;
     public TextMeshProUGUI textoObjetivoNPC;
     public GameObject[] objetivos;
     public int numDeObjetivos;
@@ -17,6 +18,7 @@ public class LogicaNPC : MonoBehaviour
     public static bool check2 = false;
     public static bool check3 = false;
     public static bool check4 = false;
+    public static bool checkMujer2 = false;
 
     void Start()
     {
@@ -26,9 +28,10 @@ public class LogicaNPC : MonoBehaviour
         check2 = false;
         check3 = false;
         check4 = false;
+        checkMujer2 = false;
     }
 
-    void OnTriggerEnter (Collider col)
+    void OnTriggerEnter(Collider col)
     {
         if (check == false)
         {
@@ -49,11 +52,20 @@ public class LogicaNPC : MonoBehaviour
                 PanelGeneral.SetActive(false);
             }
         }
+
+        if (col.gameObject.tag == "NPC2")
+        {
+            inticon.SetActive(true);
+            panelNPCHablar.SetActive(true);
+
+            NPCMujer2.GetComponent<Animator>().SetBool("isIdle", true);
+            checkMujer2 = true;
+        }
     }
 
-    void OnTriggerStay (Collider col)
+    void OnTriggerStay(Collider col)
     {
-        if (col.gameObject.tag == "NPC") 
+        if (col.gameObject.tag == "NPC")
         {
             if (check == false)
             {
@@ -83,14 +95,43 @@ public class LogicaNPC : MonoBehaviour
                 }
             }
         }
+
+        if (col.gameObject.tag == "NPC2")
+        {
+            inticon.SetActive(true);
+            panelNPCHablar.SetActive(true);
+
+            NPCMujer2.GetComponent<Animator>().SetBool("isIdle", true);
+            checkMujer2 = true;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                HmmNPC.Play();
+                Player.GetComponent<FirstPersonController>().enabled = false;
+                inticon.SetActive(false);
+                panelNPCHablar.SetActive(false);
+                PanelGeneral.SetActive(false);
+                panelNPCMision.SetActive(true);
+                StartCoroutine(HablarConNPC2());
+            }
+        }
     }
 
-    void OnTriggerExit (Collider col)
+    void OnTriggerExit(Collider col)
     {
         if (col.gameObject.tag == "NPC")
         {
             inticon.SetActive(false);
             panelNPCHablar.SetActive(false);
+        }
+
+        if (col.gameObject.tag == "NPC2")
+        {
+            inticon.SetActive(false);
+            panelNPCHablar.SetActive(false);
+
+            NPCMujer2.GetComponent<Animator>().SetBool("isIdle", false);
+            checkMujer2 = false;
         }
     }
 
