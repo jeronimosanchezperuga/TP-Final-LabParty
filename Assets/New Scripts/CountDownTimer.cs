@@ -7,7 +7,7 @@ using TMPro;
 public class CountDownTimer : MonoBehaviour
 {
     public static float currentTime = 0f;
-    float startingTime = 40f;
+    float startingTime = 45f;
     [SerializeField] TextMeshProUGUI countdownText;
 
     public static bool timesUp = false;

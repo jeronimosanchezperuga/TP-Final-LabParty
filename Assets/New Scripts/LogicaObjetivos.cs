@@ -52,7 +52,7 @@ public class LogicaObjetivos : MonoBehaviour
                 textoMision.text = "Regresa  con  Odd Chap";
                 check3 = true;
                 LogicaNPC.check3 = false;
-                CountDownTimer.currentTime = 40f;
+                CountDownTimer.currentTime = 45f;
                 panelTimer.SetActive(false);
             }
         }

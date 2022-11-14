@@ -14,6 +14,7 @@ TagManager:
   - NPC3
   - NPC4
   - PerugaNPC1
+  - NPC5
   layers:
   - Default
   - TransparentFX

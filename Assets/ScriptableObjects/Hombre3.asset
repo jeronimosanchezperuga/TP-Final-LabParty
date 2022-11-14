@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 266cc79b7f23fe4469175aa8978347f6, type: 3}
-  m_Name: Mujer1
+  m_Name: Hombre3
   m_EditorClassIdentifier: 
-  dialogo1: 'Emma:  Oh,  oh  -  hola?'
-  dialogo2: 'Emma:  Uhmm,  quien  sos?'
-  dialogo3: 'Emma:  ...  Alguien  me  conto  que...'
-  dialogo4: 'Emma:  Va  a  haber  una  fiesta?!'
-  dialogo5: 'Emma:  Me  da  pavor,  aghh...'
-  dialogo6: 'Emma:  Ojala  no  sea  cierto!'
+  dialogo1: 'Lucas:  Mhmm...  ah,  hola...'
+  dialogo2: 'Lucas:  Estas  en  el  seminario,  no?'
+  dialogo3: 'Lucas:  Peruga  nos  puso  otro  trabajo.'
+  dialogo4: "Lucas:  Y  se  entrega  ma\xF1ana!  Aghh!"
+  dialogo5: 'Lucas:  No  ando  de  humor  para  hablar...'
+  dialogo6: 'Lucas:  Largo!'
   hasTalked: 1
