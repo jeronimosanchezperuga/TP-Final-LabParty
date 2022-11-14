@@ -54,6 +54,7 @@ public class LogicaObjetivos : MonoBehaviour
                 LogicaNPC.check3 = false;
                 CountDownTimer.currentTime = 45f;
                 panelTimer.SetActive(false);
+                LogicaNPC.checkPartyTime = true;
             }
         }
    }

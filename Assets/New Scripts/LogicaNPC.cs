@@ -14,14 +14,14 @@ public class LogicaNPC : MonoBehaviour
     public TextMeshProUGUI textoObjetivoNPC;
     public GameObject[] objetivos;
     public int numDeObjetivos;
-    public AudioSource HmmNPC, DiscoMusic, RelaxingMusic;
+    public AudioSource HmmNPCMale, HmmNPCFemale, DiscoMusic, RelaxingMusic;
     public static bool check = false;
     public static bool check2 = false;
     public static bool check3 = false;
     public static bool check4 = false;
     public static bool checkMujer2 = false;
     public static bool checkPeruga1 = false;
-    private bool checkPartyTime = false;
+    public static bool checkPartyTime = false;
     private bool checkTalked = false;
 
     void Update()
@@ -30,6 +30,7 @@ public class LogicaNPC : MonoBehaviour
         NPCHombre1Data.hasTalked == true && NPCHombre3Data.hasTalked == true && NPCPeruga1Data.hasTalked == true)
         {
             checkTalked = true;
+            NPCOddChap.hasTalked = false;
         }
     }
 
@@ -148,7 +149,7 @@ public class LogicaNPC : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        HmmNPC.Play();
+                        HmmNPCMale.Play();
                         Player.GetComponent<FirstPersonController>().enabled = false;
                         inticon.SetActive(false);
                         panelNPCHablar.SetActive(false);
@@ -163,7 +164,7 @@ public class LogicaNPC : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        HmmNPC.Play();
+                        HmmNPCMale.Play();
                         Player.GetComponent<FirstPersonController>().enabled = false;
                         inticon.SetActive(false);
                         panelNPCHablar.SetActive(false);
@@ -176,7 +177,7 @@ public class LogicaNPC : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        HmmNPC.Play();
+                        HmmNPCMale.Play();
                         Player.GetComponent<FirstPersonController>().enabled = false;
                         inticon.SetActive(false);
                         panelNPCHablar.SetActive(false);
@@ -197,7 +198,7 @@ public class LogicaNPC : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    HmmNPC.Play();
+                    HmmNPCFemale.Play();
                     Player.GetComponent<FirstPersonController>().enabled = false;
                     inticon.SetActive(false);
                     panelNPCHablar.SetActive(false);
@@ -218,7 +219,7 @@ public class LogicaNPC : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    HmmNPC.Play();
+                    HmmNPCMale.Play();
                     Player.GetComponent<FirstPersonController>().enabled = false;
                     inticon.SetActive(false);
                     panelNPCHablar.SetActive(false);
@@ -236,7 +237,7 @@ public class LogicaNPC : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    HmmNPC.Play();
+                    HmmNPCMale.Play();
                     Player.GetComponent<FirstPersonController>().enabled = false;
                     inticon.SetActive(false);
                     panelNPCHablar.SetActive(false);
@@ -254,7 +255,7 @@ public class LogicaNPC : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    HmmNPC.Play();
+                    HmmNPCFemale.Play();
                     Player.GetComponent<FirstPersonController>().enabled = false;
                     inticon.SetActive(false);
                     panelNPCHablar.SetActive(false);
@@ -272,7 +273,7 @@ public class LogicaNPC : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    HmmNPC.Play();
+                    HmmNPCMale.Play();
                     Player.GetComponent<FirstPersonController>().enabled = false;
                     inticon.SetActive(false);
                     panelNPCHablar.SetActive(false);
@@ -383,7 +384,6 @@ public class LogicaNPC : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         Player.GetComponent<FirstPersonController>().enabled = true;
         check4 = true;
-        checkPartyTime = true;
     }
 
     IEnumerator HablarConNPC3()
