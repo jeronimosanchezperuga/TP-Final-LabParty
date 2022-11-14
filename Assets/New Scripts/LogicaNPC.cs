@@ -9,7 +9,7 @@ using TMPro;
 
 public class LogicaNPC : MonoBehaviour
 {
-    public GameObject panelNPCHablar, panelNPCMision, inticon, Player, MissionObjects, PanelGeneral, panelTimer, NPCMujer2;
+    public GameObject panelNPCHablar, panelNPCMision, inticon, Player, MissionObjects, PanelGeneral, panelTimer, NPCMujer2, NPCPeruga1;
     public TextMeshProUGUI textoObjetivoNPC;
     public GameObject[] objetivos;
     public int numDeObjetivos;
@@ -19,7 +19,8 @@ public class LogicaNPC : MonoBehaviour
     public static bool check3 = false;
     public static bool check4 = false;
     public static bool checkMujer2 = false;
-    [SerializeField] NPC1Data NPCOddChap, NPCMujer1Data, NPCMujer2Data, NPCHombre1Data;
+    public static bool checkPeruga1 = false;
+    [SerializeField] NPC1Data NPCOddChap, NPCMujer1Data, NPCMujer2Data, NPCHombre1Data, NPCPeruga1Data;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class LogicaNPC : MonoBehaviour
         NPCMujer1Data.hasTalked = false;
         NPCMujer2Data.hasTalked = false;
         NPCHombre1Data.hasTalked = false;
+        NPCPeruga1Data.hasTalked = false;
     }
 
     void OnTriggerEnter(Collider col)
@@ -67,6 +69,18 @@ public class LogicaNPC : MonoBehaviour
 
                 NPCMujer2.GetComponent<Animator>().SetBool("isIdle", true);
                 checkMujer2 = true;
+            }
+        }
+
+        if (NPCPeruga1Data.hasTalked == false)
+        {
+            if (col.gameObject.tag == "PerugaNPC1")
+            {
+                inticon.SetActive(true);
+                panelNPCHablar.SetActive(true);
+
+                NPCPeruga1.GetComponent<Animator>().SetBool("isIdle", true);
+                checkPeruga1 = true;
             }
         }
 
@@ -147,6 +161,27 @@ public class LogicaNPC : MonoBehaviour
             }
         }
         
+        if (NPCPeruga1Data.hasTalked == false)
+        {
+            if (col.gameObject.tag == "PerugaNPC1")
+            {
+                NPCPeruga1.GetComponent<Animator>().SetBool("isIdle", true);
+                checkPeruga1 = true;
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    HmmNPC.Play();
+                    Player.GetComponent<FirstPersonController>().enabled = false;
+                    inticon.SetActive(false);
+                    panelNPCHablar.SetActive(false);
+                    PanelGeneral.SetActive(false);
+                    panelNPCMision.SetActive(true);
+                    StartCoroutine(HablarConPeruga());
+                    NPCPeruga1Data.hasTalked = true;
+                }
+            }
+        }
+        
         if (NPCHombre1Data.hasTalked == false)
         {
             if (col.gameObject.tag == "NPC3")
@@ -199,6 +234,15 @@ public class LogicaNPC : MonoBehaviour
 
             NPCMujer2.GetComponent<Animator>().SetBool("isIdle", false);
             checkMujer2 = false;
+        }
+
+        if (col.gameObject.tag == "PerugaNPC1")
+        {
+            inticon.SetActive(false);
+            panelNPCHablar.SetActive(false);
+
+            NPCPeruga1.GetComponent<Animator>().SetBool("isIdle", false);
+            checkPeruga1 = false;
         }
 
         if (col.gameObject.tag == "NPC3")
@@ -294,6 +338,25 @@ public class LogicaNPC : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         textoObjetivoNPC.text = NPCMujer1Data.Dialogo6;
         yield return new WaitForSeconds(2.5f);
+        panelNPCMision.SetActive(false);
+        Player.GetComponent<FirstPersonController>().enabled = true;
+    }
+
+    IEnumerator HablarConPeruga()
+    {
+        textoObjetivoNPC.text = NPCPeruga1Data.Dialogo1;
+        yield return new WaitForSeconds(2.5f);
+        textoObjetivoNPC.text = NPCPeruga1Data.Dialogo2;
+        yield return new WaitForSeconds(2.5f);
+        textoObjetivoNPC.text = NPCPeruga1Data.Dialogo3;
+        yield return new WaitForSeconds(2.5f);
+        textoObjetivoNPC.text = NPCPeruga1Data.Dialogo4;
+        yield return new WaitForSeconds(2.5f);
+        textoObjetivoNPC.text = NPCPeruga1Data.Dialogo5;
+        yield return new WaitForSeconds(2.5f);
+        textoObjetivoNPC.text = NPCPeruga1Data.Dialogo6;
+        yield return new WaitForSeconds(2.5f);
+
         panelNPCMision.SetActive(false);
         Player.GetComponent<FirstPersonController>().enabled = true;
     }
