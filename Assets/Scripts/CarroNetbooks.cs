@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarroNetbooks : MonoBehaviour
 {
-    public GameObject inticon, Ntext;
+    public GameObject inticon, Ntext, Carro1;
     public static bool check;
 
     void Start()
@@ -22,6 +22,7 @@ public class CarroNetbooks : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 check = true;
+                Carro1.GetComponent<Animator>().Play("Carro1");
             }
         }
     }
