@@ -9,8 +9,8 @@ using TMPro;
 
 public class LogicaNPC : MonoBehaviour
 {
-    public GameObject panelNPCHablar, panelNPCMision, inticon, Player, MissionObjects, PanelGeneral, panelTimer, NPCMujer2, NPCPeruga1;
-    [SerializeField] NPC1Data NPCOddChap, NPCOddChap2, NPCMujer1Data, NPCMujer2Data, NPCHombre1Data, NPCHombre3Data, NPCPeruga1Data;
+    public GameObject panelNPCHablar, panelNPCMision, inticon, Player, MissionObjects, PanelGeneral, panelTimer, NPCMujer2, TheBossNPC;
+    [SerializeField] NPC1Data NPCOddChap, NPCOddChap2, NPCMujer1Data, NPCMujer2Data, NPCHombre1Data, NPCHombre3Data, TheBossData;
     public TextMeshProUGUI textoObjetivoNPC;
     public GameObject[] objetivos;
     public int numDeObjetivos;
@@ -20,14 +20,14 @@ public class LogicaNPC : MonoBehaviour
     public static bool check3 = false;
     public static bool check4 = false;
     public static bool checkMujer2 = false;
-    public static bool checkPeruga1 = false;
+    public static bool checkTheBoss1 = false;
     public static bool checkPartyTime = false;
     private bool checkTalked = false;
 
     void Update()
     {
         if (NPCOddChap.hasTalked == true && NPCMujer1Data.hasTalked == true && NPCMujer2Data.hasTalked == true && 
-        NPCHombre1Data.hasTalked == true && NPCHombre3Data.hasTalked == true && NPCPeruga1Data.hasTalked == true)
+        NPCHombre1Data.hasTalked == true && NPCHombre3Data.hasTalked == true && TheBossData.hasTalked == true)
         {
             checkTalked = true;
             NPCOddChap.hasTalked = false;
@@ -50,7 +50,7 @@ public class LogicaNPC : MonoBehaviour
         NPCMujer2Data.hasTalked = false;
         NPCHombre1Data.hasTalked = false;
         NPCHombre3Data.hasTalked = false;
-        NPCPeruga1Data.hasTalked = false;
+        TheBossData.hasTalked = false;
     }
 
     void OnTriggerEnter(Collider col)
@@ -98,15 +98,15 @@ public class LogicaNPC : MonoBehaviour
                 }
             }
         
-            if (NPCPeruga1Data.hasTalked == false)
+            if (TheBossData.hasTalked == false)
             {
-                if (col.gameObject.tag == "PerugaNPC1")
+                if (col.gameObject.tag == "TheBoss")
                 {
                     inticon.SetActive(true);
                     panelNPCHablar.SetActive(true);
 
-                    NPCPeruga1.GetComponent<Animator>().SetBool("isIdle", true);
-                    checkPeruga1 = true;
+                    TheBossNPC.GetComponent<Animator>().SetBool("isIdle", true);
+                    checkTheBoss1 = true;
                 }
             }
 
@@ -210,12 +210,12 @@ public class LogicaNPC : MonoBehaviour
             }
         }
         
-        if (NPCPeruga1Data.hasTalked == false && NPCOddChap.hasTalked == true)
+        if (TheBossData.hasTalked == false && NPCOddChap.hasTalked == true)
         {
-            if (col.gameObject.tag == "PerugaNPC1")
+            if (col.gameObject.tag == "TheBoss")
             {
-                NPCPeruga1.GetComponent<Animator>().SetBool("isIdle", true);
-                checkPeruga1 = true;
+                TheBossNPC.GetComponent<Animator>().SetBool("isIdle", true);
+                checkTheBoss1 = true;
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -225,11 +225,11 @@ public class LogicaNPC : MonoBehaviour
                     panelNPCHablar.SetActive(false);
                     PanelGeneral.SetActive(false);
                     panelNPCMision.SetActive(true);
-                    StartCoroutine(HablarConPeruga());
-                    NPCPeruga1Data.hasTalked = true;
+                    StartCoroutine(HablarConTheBoss());
+                    TheBossData.hasTalked = true;
                 }
             }
-        }
+        }   
         
         if (NPCHombre1Data.hasTalked == false && NPCOddChap.hasTalked == true)
         {
@@ -304,13 +304,13 @@ public class LogicaNPC : MonoBehaviour
             checkMujer2 = false;
         }
 
-        if (col.gameObject.tag == "PerugaNPC1")
+        if (col.gameObject.tag == "TheBoss")
         {
             inticon.SetActive(false);
             panelNPCHablar.SetActive(false);
 
-            NPCPeruga1.GetComponent<Animator>().SetBool("isIdle", false);
-            checkPeruga1 = false;
+            TheBossNPC.GetComponent<Animator>().SetBool("isIdle", false);
+            checkTheBoss1 = false;
         }
 
         if (col.gameObject.tag == "NPC3")
@@ -432,19 +432,19 @@ public class LogicaNPC : MonoBehaviour
         Player.GetComponent<FirstPersonController>().enabled = true;
     }
 
-    IEnumerator HablarConPeruga()
+    IEnumerator HablarConTheBoss()
     {
-        textoObjetivoNPC.text = NPCPeruga1Data.Dialogo1;
+        textoObjetivoNPC.text = TheBossData.Dialogo1;
         yield return new WaitForSeconds(2.5f);
-        textoObjetivoNPC.text = NPCPeruga1Data.Dialogo2;
+        textoObjetivoNPC.text = TheBossData.Dialogo2;
         yield return new WaitForSeconds(2.5f);
-        textoObjetivoNPC.text = NPCPeruga1Data.Dialogo3;
+        textoObjetivoNPC.text = TheBossData.Dialogo3;
         yield return new WaitForSeconds(2.5f);
-        textoObjetivoNPC.text = NPCPeruga1Data.Dialogo4;
+        textoObjetivoNPC.text = TheBossData.Dialogo4;
         yield return new WaitForSeconds(2.5f);
-        textoObjetivoNPC.text = NPCPeruga1Data.Dialogo5;
+        textoObjetivoNPC.text = TheBossData.Dialogo5;
         yield return new WaitForSeconds(2.5f);
-        textoObjetivoNPC.text = NPCPeruga1Data.Dialogo6;
+        textoObjetivoNPC.text = TheBossData.Dialogo6;
         yield return new WaitForSeconds(2.5f);
 
         panelNPCMision.SetActive(false);

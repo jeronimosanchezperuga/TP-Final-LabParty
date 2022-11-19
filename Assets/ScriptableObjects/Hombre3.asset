@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogo1: 'Lucas:  Mhmm...  ah,  hola...'
   dialogo2: 'Lucas:  Estas  en  el  seminario,  no?'
-  dialogo3: 'Lucas:  Peruga  nos  puso  otro  trabajo.'
+  dialogo3: 'Lucas:  El jefe  nos  puso  otro  trabajo.'
   dialogo4: "Lucas:  Y  se  entrega  ma\xF1ana!  Aghh!"
   dialogo5: 'Lucas:  No  ando  de  humor  para  hablar...'
   dialogo6: 'Lucas:  Largo!'
-  hasTalked: 1
+  hasTalked: 0
